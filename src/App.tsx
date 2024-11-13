@@ -1,5 +1,6 @@
 import { ComponentCounter } from "./components/ComponentCounter/ComponentCounter";
 import { ComponentUseEffect } from "./components/ComponentUseEffect/ComponentUseEffect";
+import { FormComponent } from "./components/FormComponent/FormComponent";
 import { MiPrimerComponent } from "./components/MiPrimerComponent/MiPrimerComponent";
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
     />
     <ComponentCounter />
     <ComponentUseEffect/>
+    <FormComponent />
     </div>
   );
 };
