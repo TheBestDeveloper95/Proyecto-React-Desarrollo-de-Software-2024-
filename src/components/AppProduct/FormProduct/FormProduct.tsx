@@ -1,8 +1,11 @@
-import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
+import { Button, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 import { useForm } from "../../../hooks/useForm"
+import { FC } from "react";
 
-
-export const FormProduct = () => {
+interface IPropsFormProduct{
+    handleAddProduct: Function;
+}
+export const FormProduct :FC<IPropsFormProduct>= ({handleAddProduct}) => {
  
     const {handleChange, values, resetForm}= useForm(
         {
@@ -12,6 +15,8 @@ export const FormProduct = () => {
         });
 
         const handleSubmitForm = () => {
+            handleAddProduct(values);
+            resetForm();
         }
     return (
     <Form className="p-4 border rounded m-3">
@@ -49,7 +54,10 @@ export const FormProduct = () => {
             />
         </FormGroup>
 
+<div className="d-flex justify-content-center mt-4">
+    <Button onClick={handleSubmitForm} variant="primary">Enviar producto</Button>
+</div>
 
     </Form>
-  )
-}
+  );
+};
